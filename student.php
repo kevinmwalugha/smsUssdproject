@@ -7,7 +7,7 @@ $sms=getStudentIndexNo();
 $student=selectStudentIndexNoFromDb($sms['message']);
 
     if($student['index_no'] != 0){
-    $reply= "Index Number is valid and it belongs to ".$student['fName']." ".$student['lName'];
+    $reply= $student['index_no']." ".$student['fName']." ".$student['LName'].". Overall Grade: ".$student['overall'];
 
     }else{
     $reply =  "No Student with that Index Number Exists. Please Enter the correct Index Number.";
