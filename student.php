@@ -1,5 +1,6 @@
-<<?php
+<?php
 //A student exam system where a student send a text where he/she enters her index number
+error_reporting(0);
 require_once('connect.php');
 
 $sms=getStudentIndexNo();
@@ -34,7 +35,7 @@ function selectStudentIndexNoFromDb($index_no){
   if(mysql_num_rows($query)>0){
     $row=mysql_fetch_assoc($query);
   }else{
-    $row=['index_no']=0;
+    $row['index_no']=0;
   }
   return $row;
 }
